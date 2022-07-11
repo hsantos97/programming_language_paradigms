@@ -20,7 +20,7 @@ for i = 1, ALUNOS do
   print(string.format("Aluno %s Media %.2f idade %d", nome, media, idade))
   if media >= 6 then 
     aprovados = aprovados + 1
-  elseif media <= 4 then 
+  elseif media < 4 then 
     reprovados = reprovados +1
   else
     rec = rec +1
