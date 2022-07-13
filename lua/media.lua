@@ -1,9 +1,10 @@
 ALUNOS = 4
-NOTAS = 2
+NOTAS = 4
 
 medias = {}
 aprovados = 0
 reprovados = 0
+mediaIdade = 0
 rec = 0
 
 for i = 1, ALUNOS do
@@ -11,7 +12,8 @@ for i = 1, ALUNOS do
   io.write(string.format("Digite o nome do aluno: "))
   nome = io.read()
   io.write(string.format("Digite a idade do aluno %s: ", nome))
-  idade =  tonumber(io.read()) 
+  idade =  tonumber(io.read())
+  mediaIdade = mediaIdade + idade
   for j = 1, NOTAS do    
     io.write(string.format("Digite a nota %d do aluno %s: ", j, nome))
     media = media + tonumber(io.read()) 
@@ -32,5 +34,6 @@ for indice, nome in pairs(medias) do
     print(string.format("Nome %s: %.2f", nome, media))
 end
 print(string.format("%d alunos tiveram media maior ou igual a 6.", aprovados))
-print(string.format("%d alunos tiveram media menor ou igual a 4.", reprovados))
 print(string.format("%d alunos tiveram media entre 4 e 5.", rec))
+print(string.format("%d alunos tiveram media menor ou igual a 4.", reprovados))
+print(string.format("Media de idade dos alunos: %.2f", mediaIdade/ALUNOS))
