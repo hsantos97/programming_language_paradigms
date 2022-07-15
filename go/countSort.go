@@ -1,5 +1,6 @@
 package main
 
+// Find the maximum value in an array of integers.
 func findMax(arr []int) int {
 	var temp int
 
@@ -14,6 +15,7 @@ func findMax(arr []int) int {
 	return temp
 }
 
+// MakeRange returns an array of integers from min to max.
 func makeRange(min, max int) []int {
 	a := make([]int, max-min+1)
 	for i := range a {
@@ -24,7 +26,6 @@ func makeRange(min, max int) []int {
 
 func countingSort(arr []int) []int {
 	// generate array from min to max
-	//todo: wie unten lösen
 	counter := makeRange(0, findMax(arr))
 
 	// count
@@ -51,6 +52,7 @@ func countingSort(arr []int) []int {
 	return res
 }
 
+// PrintArr takes an array of ints and prints each element on a new line.
 func printArr(arr []int) {
 	for i, e := range arr {
 		println(i, ":", e)
